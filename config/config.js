@@ -38,12 +38,6 @@ let config = {
 
 	modules: [
 		{
-			module: "alert",
-		},
-		{
-			module: "updatenotification",
-		},
-		{
 			module: "clock",
 			position: "bottom_left",
 			config: {
@@ -53,14 +47,38 @@ let config = {
 			}
 		},
 		{
-			module: "MMM-MonthlyCalendar",
-			position: "top_left",
-			hiddenOnStartup: false,
-			config: {
-				mode: "threeWeeks",
-				firstDayOfWeek: "monday",
-				wrapTitles: false,
+  		module: "MMM-CalendarExt3",
+  		position: "top_left",
+		config: {
+			mode: "week",
+			weekIndex: 0,
+			weeksInView: 2,
+			maxEventLines: 6,
+			useMarquee: true,
+			eventTransformer: (e) => {
+					if (e.title.search("Swim - ") > -1) {
+						var distance = e.description.match(/Distance:(.*) km/)[1] * 1000
+						e.title = ["Swim: ", distance, "m"].join('')
+						e.description = null
+  						return e
+					}
+					if (e.title.search("Run - ") > -1) {
+						var duration = e.description.match(/Duration:(.*)/)[1]
+						e.title = ["Run: ", duration].join('')
+						e.description = null
+  						return e
+					}
+					if (e.title.search("Bike - ") > -1) {
+						var duration = e.description.match(/Duration:(.*)/)[1]
+						e.title = ["Bike: ", duration].join('')
+						e.description = null
+  						return e
+					}
+					return e
+				}
+
 			}
+
 		},
 		{
   			module: "MMM-CalendarExt3Agenda",
@@ -130,11 +148,11 @@ let config = {
 						url: "https://calendar.google.com/calendar/ical/..."
 					},
 					{
-						color: "#739675", // BDV
+						color: "#FFE45E", // BDV
 						url: "https://calendar.google.com/calendar/ical/..."
 					},
 					{
-						color: "#739675", // Home
+						color: "#FFE45E", // Home
 						url: "https://calendar.google.com/calendar/ical/..."
 					},
 					{
@@ -151,7 +169,7 @@ let config = {
 					},
 					{
 						color: "#5C80BC", // Athletica
-						url: "https://app.athletica.ai/..." 
+						url: "https://app.athletica.ai/..."
 					}
 				]
 			}
@@ -183,8 +201,8 @@ let config = {
 				timeFormat: "dateheaders",
 				calendars: [
 					{
-						color: "#ffa10a",
-						url: "https://calendar.google.com/calendar/ical/..." // Weekmenu
+						color: "#ffa10a", // Weekmenu
+						url: "https://calendar.google.com/calendar/ical/..."
 					}
 				]
 			}
@@ -202,7 +220,6 @@ let config = {
 				windUnits: "kmh",
 				showSun: false,
 				showPrecipitationProbability: true,
-				//showFeelsLike: false,
 				apiBase: "https://api.open-meteo.com/v1",
 				lat: "0.0",
 				lon: "0.0",
@@ -242,7 +259,6 @@ let config = {
 				hideLoading: true,
 				wrapDescription: true,
 				wrapTitle: true,
-				//maxNewsItems: 1,
 				ignoreOldItems: true,
 				updateInterval: 12000,
 			}
