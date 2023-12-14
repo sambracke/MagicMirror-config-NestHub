@@ -1,0 +1,143 @@
+:root {
+  --color-text: #fff;
+  --color-text-dimmed: #999;
+  --color-text-bright: #fff;
+  --color-background: #0D1321;
+  --font-family:Roboto,Noto,Noto Sans,sans-serif
+  --gap-body-top: 2px;
+  --gap-body-right: 10px;
+  --gap-body-bottom: 2px;
+  --gap-body-left: 10px;
+  --gap-modules: 2px;
+}
+html {
+	cursor: unset;
+}
+body {
+	padding: 0px;
+	margin: 10px
+}
+.region.top.left {
+	width: 700px;
+	height: 430px;
+	overflow: hidden;
+}
+.region.bottom.left {
+	width: 140px;
+	height: 100px;
+	overflow: hidden;
+}
+.region.bottom.center {
+	left: 220px;
+	bottom: 50px;
+	width: 120px;
+	height: 100px;
+}
+.region.bottom.right {
+	width: 700px;
+	height: 100px;
+	overflow: hidden;
+}
+.region.top.right {
+	width: 300px;
+	height: 430px;
+	overflow: hidden;
+}
+.event-wrapper.normal.event {
+    border-top: 1px solid #fff;
+}
+
+.newsfeed-title.bright.medium.light { font-size: 30px; }
+.newsfeed-source.light.small.dimmed { font-size: 10px; }
+.dateheader.normal {
+        font-size: 25px;
+}
+.title. {
+        font-size: 15px;
+}
+.MMM-MonthlyCalendar {
+	height: 430px;
+	border-radius: 5px;
+	padding: 5px;
+	overflow: hidden;
+	background-color: #1D2D44;
+}
+.calendar {
+	border-radius: 5px;
+	padding: 5px;
+	overflow: hidden;
+	background-color: #1D2D44;
+}
+.event-wrapper.normal.event {
+        font-size: 15px;
+}
+.event-wrapper.normal.event.today {
+        background-color: #0D1321;
+}
+.dateheader.normal.today {
+        background-color: #0D1321;
+}
+
+.time.light.align-right {
+        width: 100%
+        align-self: stretch;
+        text-align: end;
+}
+
+.MMM-MonthlyCalendar .cell.today {
+        background-color: #748CAB;
+}
+.MMM-MonthlyCalendar .cell.weekend {
+        background-color: #3E5C76;
+}
+.weather .normal {
+	font-size: 15px;
+}
+.weather .bright {
+	font-size: 25px;
+	padding: 0px;
+}
+.weather .large.light { 
+	padding: 0px;
+}
+.weather .span.bright { 
+	padding: 0px;
+}
+
+.CX3A .agenda::after {
+	background-image: linear-gradient(to bottom, transparent, #0d1321)
+}
+.CX3A .cellHeader {
+	font-size: 28px;
+	align: right;
+}
+.CX3A .cellBody {
+	font-size: 20px;
+	align: right;
+}
+.CX3A .agenda {
+	background-color: #1D2D44;
+	height: 420px;
+}
+.CX3A .agenda .cell[data-events-counts="0"] {
+  display: none;
+}
+
+.CX3A.bodice {
+	display: flex;
+	flex-flow: row wrap;
+} 
+
+.CX3A .cellBody .fullday .event .title {
+  overflow: unset;
+  white-space: unset;
+  text-overflow: unset;
+} 
+
+.newsfeed-title.bright.medium.light {
+	font-size: 25px;
+}
+.fullday .event.fullday.current {
+	font-size: 25px;
+
+}
